@@ -2,11 +2,11 @@ package com.example.RegisterLogin.Service;
 
 import com.example.RegisterLogin.dto.EmployeeDTO;
 import com.example.RegisterLogin.dto.LoginDTO;
-import com.example.RegisterLogin.payload.LoginMesage;
+import com.example.RegisterLogin.payload.LoginMessage;
 
 public interface EmployeeService {
     String addEmployee(EmployeeDTO employeeDTO);
 
-    LoginMesage loginEmployee(LoginDTO loginDTO);
+    LoginMessage loginEmployee(LoginDTO loginDTO);
 
 }

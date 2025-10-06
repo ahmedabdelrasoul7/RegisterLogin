@@ -3,7 +3,7 @@ package com.example.RegisterLogin.controller;
 import com.example.RegisterLogin.Service.EmployeeService;
 import com.example.RegisterLogin.dto.EmployeeDTO;
 import com.example.RegisterLogin.dto.LoginDTO;
-import com.example.RegisterLogin.payload.LoginMesage;
+import com.example.RegisterLogin.payload.LoginMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +25,8 @@ public class EmployeeController {
     @PostMapping(path = "/login")
     public ResponseEntity<?> loginEmployee(@RequestBody LoginDTO loginDTO)
     {
-        LoginMesage loginMesage= employeeService.loginEmployee(loginDTO);
-        return ResponseEntity.ok(loginMesage);
+        LoginMessage loginMessage = employeeService.loginEmployee(loginDTO);
+        return ResponseEntity.ok(loginMessage);
     }
 
 

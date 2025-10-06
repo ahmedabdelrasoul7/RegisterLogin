@@ -1,6 +1,6 @@
 package com.example.RegisterLogin.payload;
 
-public class LoginMesage {
+public class LoginMessage {
     String message;
     Boolean status;
 
@@ -20,7 +20,7 @@ public class LoginMesage {
         this.status = status;
     }
 
-    public LoginMesage(String message, Boolean status) {
+    public LoginMessage(String message, Boolean status) {
         this.message = message;
         this.status = status;
     }

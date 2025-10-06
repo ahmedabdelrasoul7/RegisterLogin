@@ -5,7 +5,7 @@ import com.example.RegisterLogin.Repo.EmployeeRepo;
 import com.example.RegisterLogin.Service.EmployeeService;
 import com.example.RegisterLogin.dto.EmployeeDTO;
 import com.example.RegisterLogin.dto.LoginDTO;
-import com.example.RegisterLogin.payload.LoginMesage;
+import com.example.RegisterLogin.payload.LoginMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -41,7 +41,7 @@ public class EmployeeIMPL implements EmployeeService {
     EmployeeDTO employeeDTO;
 
     @Override
-    public LoginMesage loginEmployee(LoginDTO loginDTO) {
+    public LoginMessage loginEmployee(LoginDTO loginDTO) {
         String msg = "";
         Employee employee1 = employeeRepo.findByEmail(loginDTO.getEmail());
         if (employee1 != null) {
@@ -51,16 +51,16 @@ public class EmployeeIMPL implements EmployeeService {
             if (isPwdRight) {
                 Optional<Employee> employee = employeeRepo.findOneByEmailAndPassword(loginDTO.getEmail(), encodedPassword);
                 if (employee.isPresent()) {
-                    return new LoginMesage("Login Success", true);
+                    return new LoginMessage("Login Success", true);
                 } else {
-                    return new LoginMesage("Login Failed", false);
+                    return new LoginMessage("Login Failed", false);
                 }
             } else {
 
-                return new LoginMesage("password Not Match", false);
+                return new LoginMessage("password Not Match", false);
             }
         }else {
-            return new LoginMesage("Email not exits", false);
+            return new LoginMessage("Email not exits", false);
         }
 
 
